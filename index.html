@@ -2,70 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Makes the page scale correctly on phones and tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Qwanell Walker Lewis, a student and aspiring cyber security freelancer.">
     <title>Qwanell Walker Lewis - Personal Website</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- External stylesheet stored in the css folder -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section id="home">
+    <!-- Site header: name, tagline and main navigation -->
+    <header id="home">
         <h1>Hello, I'm Qwanell Walker Lewis</h1>
         <p>Student | Aspiring freelancer in the Cyber Security field</p>
-        <img src="images/profile.jpg" alt="Photo of ME" width="200">
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm currently a second-year student at the T.A. Marryshow College. I love to play different sports, but my favourite two are Volleyball and Table Tennis.</p>
-        <p>In the future, I aspire to be a freelancer in the cyber security field or work at a company like a bank.</p>
-    </section>
+        <!-- Main navigation for the personal website -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="portfolio">
-        <h2>Portfolio & Skills</h2>
+    <!-- Primary page content -->
+    <main>
 
-        <h3>My Video</h3>
-        <iframe width="400" height="225"
-                src="https://www.youtube.com/embed/GVmx_4SUZ-k"
-                title="Video of me competing at 8 years old"
-                allowfullscreen>
-        </iframe>
+        <!-- About section: profile photo, introduction and cyber security image -->
+        <section id="about">
+            <h2>About Me</h2>
 
-        <h3>My Skills</h3>
-        <table border="1">
-            <tr>
-                <th>Skill</th>
-                <th>Level</th>
-            </tr>
-            <tr>
-                <td>Web Development</td>
-                <td>Beginner</td>
-            </tr>
-            <tr>
-                <td>HTML</td>
-                <td>Beginner</td>
-            </tr>
-            <tr>
-                <td>CSS</td>
-                <td>Beginner</td>
-            </tr>
-            <tr>
-                <td>Communication, Teamwork, and Time Management</td>
-                <td>Advanced</td>
-            </tr>
-        </table>
-    </section>
+            <!-- Local image stored in the images folder -->
+            <figure class="profile">
+                <img src="images/profile.jpg" alt="Portrait photo of Qwanell Walker Lewis">
+                <figcaption>Qwanell Walker Lewis</figcaption>
+            </figure>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: qwanellwalker15@gmail.com</p>
-        <p>GitHub: <a href="https://github.com/qwanellwalker15">github.com/qwanellwalker15</a></p>
-    </section>
+            <p>I'm currently a second-year student at the T.A. Marryshow College. I love to play different sports, but my favourite two are Volleyball and Table Tennis.</p>
+            <p>In the future, I aspire to be a freelancer in the cyber security field or work at a company like a bank.</p>
+
+            <!-- Online image hosted on Unsplash, with attribution -->
+            <figure class="feature-image">
+                <img src="https://images.unsplash.com/photo-1614064642578-7faacdc6336e?auto=format&fit=crop&w=1000&q=80"
+                     alt="A brown padlock resting on a black computer keyboard, representing cyber security">
+                <figcaption>
+                    Photo by
+                    <a href="https://unsplash.com/@flyd2069" target="_blank" rel="noopener">FlyD</a>
+                    on
+                    <a href="https://unsplash.com/photos/brown-padlock-on-black-computer-keyboard-FGH69mi53Mw" target="_blank" rel="noopener">Unsplash</a>
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- Portfolio section: video and skills table -->
+        <section id="portfolio">
+            <h2>Portfolio &amp; Skills</h2>
+
+            <!-- Embedded YouTube video inside a responsive wrapper -->
+            <article>
+                <h3>My Video</h3>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/GVmx_4SUZ-k"
+                        title="Video of me competing at 8 years old"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </article>
+
+            <!-- Skills table -->
+            <article>
+                <h3>My Skills</h3>
+                <table>
+                    <caption>My skills and current level</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Skill</th>
+                            <th scope="col">Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>Beginner</td>
+                        </tr>
+                        <tr>
+                            <td>HTML</td>
+                            <td>Beginner</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>Beginner</td>
+                        </tr>
+                        <tr>
+                            <td>Communication, Teamwork, and Time Management</td>
+                            <td>Advanced</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:qwanellwalker15@gmail.com">qwanellwalker15@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/qwanellwalker15" target="_blank" rel="noopener">github.com/qwanellwalker15</a></p>
+        </section>
+
+    </main>
+
+    <!-- Site footer: copyright and quick contact -->
+    <footer>
+        <p>&copy; 2026 Qwanell Walker Lewis. All rights reserved.</p>
+        <p><a href="mailto:qwanellwalker15@gmail.com">qwanellwalker15@gmail.com</a></p>
+    </footer>
+
 </body>
 </html>
