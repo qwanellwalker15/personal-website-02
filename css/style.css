@@ -1,39 +1,280 @@
+/* ==========================================================
+   Personal Website - Qwanell Walker Lewis
+   Mobile-first stylesheet: base styles are for phones, then
+   media queries add layout for tablet and desktop.
+   ========================================================== */
+
+/* ---------- Reset and base styles ---------- */
+
+/* Include padding and borders in element widths to prevent overflow */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when nav links are clicked, with space for spacing */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+/* Page-wide font, colours and spacing (rem units scale with the user's settings) */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
+    color: #222;
     background-color: #f5f5f5;
 }
 
+/* Images shrink to fit their container and never overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Links */
+a {
+    color: #0b5ed7;
+}
+
+a:hover,
+a:focus {
+    color: #084298;
+}
+
+/* ---------- Header and navigation ---------- */
+
+/* Dark header with the site name and tagline */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem 0.5rem;
+}
+
+header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
+header p {
+    margin: 0 0 1rem;
+}
+
+/* Navigation list: stacked on mobile for easy tapping */
 nav ul {
     list-style-type: none;
-    background-color: #333;
-    padding: 10px;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 nav ul li {
-    margin: 0 15px;
+    border-top: 1px solid #555;
 }
 
 nav ul li a {
-    color: white;
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-section {
-    padding: 20px;
-    text-align: center;
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #555;
+    color: #fff;
 }
 
+/* ---------- Main content and sections ---------- */
+
+/* Main content area with a readable maximum width, centred on large screens */
+main {
+    max-width: 62.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Each section is a white card */
+section {
+    background-color: #fff;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* ---------- Images and figures ---------- */
+
+figure {
+    margin: 1rem auto;
+}
+
+figcaption {
+    font-size: 0.875rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+/* Local profile photo shown as a circle */
+.profile img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 4px solid #333;
+}
+
+/* Online image from Unsplash, scales with the screen */
+.feature-image img {
+    width: 100%;
+    max-width: 43.75rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+/* ---------- Portfolio: responsive video ---------- */
+
+/* Wrapper keeps the 16:9 video ratio at any screen width */
+.video-wrapper {
+    width: 100%;
+    max-width: 43.75rem;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+/* ---------- Skills table ---------- */
+
 table {
+    width: 100%;
+    max-width: 40rem;
     margin: 0 auto;
     border-collapse: collapse;
 }
 
-th, td {
-    padding: 10px;
+caption {
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Alternate row colours make rows easier to read */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.25rem 1rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+footer a {
+    color: #fff;
+}
+
+/* ==========================================================
+   Responsive layout
+   ========================================================== */
+
+/* Tablet screens (768px and wider): nav becomes a horizontal row */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2.25rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li {
+        border-top: none;
+    }
+
+    nav ul li a {
+        padding: 0.75rem 1.5rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .profile img {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+/* Desktop screens (1024px and wider): more space and larger text */
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.125rem;
+    }
+
+    header {
+        padding-top: 2.5rem;
+    }
+
+    header h1 {
+        font-size: 2.75rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2.5rem;
+    }
+
+    .profile img {
+        width: 14rem;
+        height: 14rem;
+    }
 }
